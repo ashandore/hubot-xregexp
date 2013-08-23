@@ -1,0 +1,34 @@
+{
+	"name": "hubot-xregexp",
+	"version": "1.0.0",
+	"description": "Adds XRegExp support to Hubot",
+	"main": "./src/hubot-xregexp",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ashandore/hubot-xregexp.git"
+	},
+	"author": {
+		"name" : "George Harris"
+	},
+	"contributors": [
+	{
+		"name": "George Harris",
+		"email": "george@luminairecoffee.com"
+	}
+	],
+	"keywords": [
+		"github",
+		"hubot",
+		"xregexp"
+	],
+	"licenses": {
+		"type" : "MIT",
+		"url" : "http://opensource.org/licenses/mit-license.php"
+	},
+	"dependencies": {
+		"xregexp" : "latest"
+	},
+	"devDependencies": {
+		"coffee-script": ">=1.2.0"
+	}
+}
