@@ -1,14 +1,14 @@
 {TextListener} = require (process.env.HUBOT_HALL_REQUIRE_PATH || 'hubot')
 XRegExp = require('xregexp').XRegExp
+XRegExp.install
+  natives: true
+  extensibility: true
 
 module.exports = (robot) ->
-  console.log "Loading xregexp"
-
   robot.respond = (regex, callback) ->
     re = regex.toString().split('/')
     re.shift()
     modifiers = re.pop()
-
     if re[0] and re[0][0] is '^'
       robot.logger.warning \
         "Anchors don't work well with respond, perhaps you want to use 'hear'"
@@ -28,5 +28,7 @@ module.exports = (robot) ->
         "^[@]?#{name}[:,]?\\s*(?:#{pattern})",
         modifiers
       )
+
+    newRegex.xregexp = regex.xregexp
 
     robot.listeners.push new TextListener(robot, newRegex, callback)
