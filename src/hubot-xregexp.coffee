@@ -1,7 +1,7 @@
 {TextListener} = require (process.env.HUBOT_HALL_REQUIRE_PATH || 'hubot')
 
 module.exports = (robot) ->
-  XRegExp = require('xregexp').XRegExp;
+  XRegExp = require('xregexp').XRegExp
   console.log "Loading xregexp"
 
   robot.respond = (regex, callback) ->
@@ -28,7 +28,5 @@ module.exports = (robot) ->
         "^[@]?#{name}[:,]?\\s*(?:#{pattern})",
         modifiers
       )
-
-    console.log "Regex is #{newRegex}"
 
     robot.listeners.push new TextListener(robot, newRegex, callback)
