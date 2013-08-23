@@ -1,7 +1,7 @@
 {TextListener} = require (process.env.HUBOT_HALL_REQUIRE_PATH || 'hubot')
+XRegExp = require('xregexp').XRegExp
 
 module.exports = (robot) ->
-  XRegExp = require('xregexp').XRegExp
   console.log "Loading xregexp"
 
   robot.respond = (regex, callback) ->
